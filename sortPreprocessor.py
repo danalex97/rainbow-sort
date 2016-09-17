@@ -1,5 +1,6 @@
 from wlRGB import *
 from PIL import Image
+import random
 
 from matplotlib.pyplot import imshow
 import numpy as np
@@ -9,6 +10,7 @@ import os
 class SortPreprocessor:
 	def __init__(self, __list):
 		self.list = __list
+		random.shuffle(self.list)
 
 		self.min = min(self.list)
 		self.max = max(self.list)
@@ -22,7 +24,8 @@ class SortPreprocessor:
 	def export_image(self):
 		self.width = 1440
 		self.height = 900
-		
+		self.wl = [400, 700, 500]
+
 		self.im = Image.new("RGB", (self.width, self.height))
 		self.pix = self.im.load()
 
@@ -30,12 +33,30 @@ class SortPreprocessor:
 
 		for x in range(self.width):
 			for y in range(self.height):
-				b, g, r = self.rgb[(x * len(self.list)) / self.width]
+				b, g, r = self.rgb[(y * len(self.wl)) / self.height]
 				self.pix[x, y] = r, g, b
 		
 		imshow("gen-capture", np.array(self.im))
 		waitKey(0)
 		destroyWindow("gen-capture")
 
-preproc = SortPreprocessor(range(200))
-preproc.export_image()
+	def export_single(self, color):
+		self.width = 1440
+		self.height = 900
+
+		self.im = Image.new("RGB", (self.width, self.height))
+		self.pix = self.im.load()
+
+		for x in range(self.width):
+			for y in range(self.height):
+				self.pix[x, y] = color
+		
+		imshow("gen-capture" + str(color), np.array(self.im))
+		waitKey(0)
+		
+
+preproc = SortPreprocessor(range(3))
+
+# preproc.export_single((255, 0, 0))
+# preproc.export_single((0, 255, 0))
+# preproc.export_single((0, 0, 255))
