@@ -7,15 +7,19 @@ def setup():
 
 def led1(state):
 	GPIO.setup(2, GPIO.OUT)
-	GPIO.output(2, state)
+	GPIO.output(2, state)	
+	GPIO.setup(3, GPIO.OUT)
+	GPIO.output(3, not state)
 
 def led3(state):
 	GPIO.setup(4, GPIO.OUT)
-	GPIO.output(4, state)
+	GPIO.output(4, state)	
 
 def led4(state):
 	GPIO.setup(11, GPIO.OUT)
 	GPIO.output(11, state)
+	GPIO.setup(13, GPIO.OUT)
+	GPIO.output(13, not state)
 
 def led5(state):
 	GPIO.setup(15, GPIO.OUT)
@@ -24,10 +28,14 @@ def led5(state):
 def led6(state):
 	GPIO.setup(21, GPIO.OUT)
 	GPIO.output(21, state)
+	GPIO.setup(23, GPIO.OUT)
+	GPIO.output(23, not state)
 
 def led7(state):
 	GPIO.setup(8, GPIO.OUT)
 	GPIO.output(8, state)
+	GPIO.setup(10, GPIO.OUT)
+	GPIO.output(10, not state)
 
 def led8(state):
 	GPIO.setup(12, GPIO.OUT)
