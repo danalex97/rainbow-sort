@@ -25,7 +25,7 @@ def led5(state):
 	GPIO.setup(10, GPIO.OUT)
 	GPIO.output(10, state)
 	GPIO.setup(9, GPIO.OUT)
-	GPIO.output(9, state)
+	GPIO.output(9, not state)
 
 def led6(state):
 	GPIO.setup(11, GPIO.OUT)
@@ -73,7 +73,7 @@ ledmap = {}
 ledmap[1] = (led1, True)
 ledmap[3] = (led3, True)
 ledmap[4] = (led4, True)
-ledmap[5] = (led5, False)
+ledmap[5] = (led5, True) #
 ledmap[6] = (led6, True)
 ledmap[7] = (led7, True)
 ledmap[8] = (led8, True)
