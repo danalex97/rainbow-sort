@@ -1,5 +1,6 @@
-import RPi.GPIO as GPIO
 import time
+
+import RPi.GPIO as GPIO
 
 def setup():
 	GPIO.setmode(GPIO.BCM)
@@ -32,29 +33,54 @@ def led8(state):
 	GPIO.setup(12, GPIO.OUT)
 	GPIO.output(12, state)
 
+# def setup():
+# 	pass
+
+# def led1(state):
+# 	pass
+
+# def led3(state):
+# 	pass
+
+# def led4(state):
+# 	pass
+
+# def led5(state):
+# 	pass
+
+# def led6(state):
+# 	pass
+
+# def led7(state):
+# 	pass
+
+# def led8(state):
+# 	pass
+
+
 def wait(secs):
 	time.sleep(secs)
 
 ledmap = {}
-ledmap[1] = led1
-ledmap[3] = led3
-ledmap[4] = led4
-ledmap[5] = led5
-ledmap[6] = led6
-ledmap[7] = led7
-ledmap[8] = led8
+ledmap[1] = (led1, True)
+ledmap[3] = (led3, True)
+ledmap[4] = (led4, True)
+ledmap[5] = (led5, False)
+ledmap[6] = (led6, True)
+ledmap[7] = (led7, True)
+ledmap[8] = (led8, True)
 
 def testLed(nbr):
-	led = ledmap[nbr]
+	led, onOff = ledmap[nbr]
 	
 	print "Test led " + str(nbr)
 
-	led(True)
+	led(onOff)
 	wait(1)
-	led(False)
+	led(not onOff)
 	wait(1)
 
-	print "Finished testing led " + str(nbr)
+	print "Done " + str(nbr)
 
 setup()
 
