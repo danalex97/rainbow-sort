@@ -24,6 +24,8 @@ For clarity, you might want to reffer to:
 
 ## Hardware part the setup
 
+The complexity will(obviously) not hold.
+
 The setup:
 * Banana Pi
 * 4 leds with different frequencies
@@ -31,7 +33,17 @@ The setup:
 * 2 lens: biconvex(for focusing), plan-concave(for straighten)
 * observation wall(another post-it set)
 
+Simplified workflow:
+* Use only refraction for light without actually combining it.
+* The output rays are sorted by on horizontal from left to right. (e.g. from red, blue orange, green to red, orange, green, blue - see example image)
+
+<img src="https://github.com/danalex97/rainbow-sort/blob/master/setup/3.jpg" width=250>
+<img src="https://github.com/danalex97/rainbow-sort/blob/master/setup/4.jpg" width=250>
+<img src="https://github.com/danalex97/rainbow-sort/blob/master/setup/6.jpg" width=250>
+<img src="https://github.com/danalex97/rainbow-sort/blob/master/setup/7.jpg" width=250>
+<img src="https://github.com/danalex97/rainbow-sort/blob/master/setup/8.jpg" width=250>
+<img src="https://github.com/danalex97/rainbow-sort/blob/master/setup/9.jpg" width=250>
+
 ## Software part
 
 to do
-
