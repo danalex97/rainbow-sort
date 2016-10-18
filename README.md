@@ -22,3 +22,16 @@ For clarity, you might want to reffer to:
 * https://en.wikipedia.org/wiki/Refraction
 * https://en.wikipedia.org/wiki/Dispersion_(optics)
 
+## Hardware part the setup
+
+The setup:
+* Banana Pi
+* 4 leds with different frequencies
+* slit(improvised by 2 post-it sets)
+* 2 lens: biconvex(for focusing), plan-concave(for straighten)
+* observation wall(another post-it set)
+
+## Software part
+
+to do
+
